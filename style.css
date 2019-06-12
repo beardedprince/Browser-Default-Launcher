@@ -1,0 +1,103 @@
+*{
+		margin:0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.settings{
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		transform: translateX(-100%);
+transition: transform 1s;
+	}
+
+
+
+
+
+	.settings-opened{
+		 transform: none;
+	}
+
+	input[type=text]{
+		padding: 12px 20px;
+	width: 62%;
+	border:1px solid outset;
+	margin-left: 12px;
+	box-sizing: border-box;
+	border-radius: 4px;
+
+	}
+	input[type=submit]{
+		padding: 12px 10px;
+	width: 25%;
+	border:1px solid outset;
+	margin-left: 5px;
+	box-sizing: border-box;
+	border-radius: 4px;
+
+	}
+
+	button{
+		height: 30px;
+		width: 70px;
+		background: none;
+	border:none;
+		font-size: 12px;
+		cursor: pointer;
+		color: #f4f4f4;
+
+	}
+
+	.add{
+		background-color: #ddd;
+    padding: 12px 23px;
+    border-radius: 0px 5px 5px 0px;
+	}
+
+	.btn-weather{
+		float: right;
+	}
+
+	form{
+		padding-top: 20px;
+	}
+
+	p{
+		color: white;
+	}
+
+	.fa{
+		font-size: 18px;
+	}
+
+
+	#timing{
+		font-weight: 900;
+		padding-top: 12px;
+		color: #f4f4f4;
+	}
+
+.greeting-container {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+}
+
+
+.greeting {
+   font-family: sans-serif;
+   font-size: 45px;
+   color: #fff;
+   margin-top: 50px;
+}
+body {
+   background-color: #c670ca;
+/*   background-image: linear-gradient(45deg, #c670ca 0%, #25a5c8 52%, #20e275 90%);
+*/  
+background-image: url("image/broswify.jpg"); 
+}
+html {
+   height: 100%;
+}
