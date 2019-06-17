@@ -35,11 +35,17 @@ function getGreeting() {
 getGreeting();
 
 var today = new Date();
-var time = today.getHours() + ":" + today.getMinutes();
+var hours = today.getHours();
+var minutes = today.getMinutes();
+var picker =  hours >= 12 ? 'pm' : 'am';
+hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+var time = hours + ':' + minutes + ' ' + picker;
 var timing = document.getElementById("timing").innerHTML= time;
 
-var myDate = new Date();
-    var hrs = myDate.getHours();
+
+    var hrs = today.getHours();
 
     var greet;
 
@@ -53,3 +59,26 @@ var myDate = new Date();
     document.getElementById('time-of-day').innerHTML =
         '<b>' + greet + '</b> ';
 
+//todo app settings
+
+$("document").ready(function(){
+
+		$('.add').click(function(){
+			var acceptInput = $('.input').val();
+			
+			if (acceptInput == ''){
+				alert('you need to input something');
+			} else {
+			$('ul').append('<li> <span style="float:right"> &times; </span> ' + acceptInput + '</li>' )
+
+			}});
+
+			$(document).on('dblclick','li', function(){
+        $(this).toggleClass('strike').fadeOut('1000');    
+      });
+
+
+		});
+
+		
+	
