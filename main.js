@@ -1,3 +1,4 @@
+
 function openSettings() {
    document.getElementById("settings").classList.toggle("settings-opened");
 }
@@ -69,9 +70,11 @@ $("document").ready(function(){
 			if (acceptInput == ''){
 				alert('you need to input something');
 			} else {
-			$('ul').append('<li> <span style="float:right"> &times; </span> ' + acceptInput + '</li>' )
-
+			$('ul').append('<li> <i class="fa fa-edit"></i> ' + acceptInput + '</li>' )
+$('.input').val('');
 			}});
+
+		
 
 			$(document).on('dblclick','li', function(){
         $(this).toggleClass('strike').fadeOut('1000');    
