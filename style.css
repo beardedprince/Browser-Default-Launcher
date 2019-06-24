@@ -268,4 +268,8 @@ background-color: hsla(0, 100%, 90%, 0.3);
 }
 
 
+#sortable1, #sortable2{
+	list-style: none;
+}
+
 /* End of task wrapper settings*/

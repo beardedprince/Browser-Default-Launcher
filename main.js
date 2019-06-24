@@ -40,7 +40,7 @@ var hours = today.getHours();
 var minutes = today.getMinutes();
 var picker =  hours >= 12 ? 'pm' : 'am';
 hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
+  hours = hours ? hours : 12; 
   minutes = minutes < 10 ? '0'+minutes : minutes;
 var time = hours + ':' + minutes + ' ' + picker;
 var timing = document.getElementById("timing").innerHTML= time;
@@ -74,14 +74,28 @@ $("document").ready(function(){
 $('.input').val('');
 			}});
 
-		
+
 
 			$(document).on('dblclick','li', function(){
         $(this).toggleClass('strike').fadeOut('1000');    
       });
 
+			
 
-		});
+   });
+
+$( function() {
+    $( "ul.droptrue" ).sortable({
+      connectWith: "ul"
+    });
+ 
+    $( "ul.dropfalse" ).sortable({
+      
+      dropOnEmpty: true
+    });
+ 
+    $( "#sortable1, #sortable2" ).disableSelection();
+  } );
 
 		
 	
