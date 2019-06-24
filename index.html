@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
 
@@ -30,9 +32,7 @@
         <input type="submit" class="name-button" value="Add name">
 		</form>
 			</li>
-			<li>
-				Anpd
-			</li>
+			
 		</ol>
 		
 	</div>
@@ -43,13 +43,16 @@
 
 			<div class="tasklist">
 				<h2>Tasks List</h2>
-					<ul class="task-lists">
+					<ul class="task-lists droptrue" id="sortable1" >
 						
 					</ul>
 			</div>
 
 			<div class="completedtask">
 				<h2> Drag completed task to this place here</h2>
+				<ul class="dropfalse" id="sortable2">
+					
+				</ul>
 			</div>
 
 		</div>
