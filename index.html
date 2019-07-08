@@ -8,12 +8,16 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+	        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+	        crossorigin="anonymous"></script>
+		<script src="touch-dnd.js"></script>
+	 -->
 </head>
 
 
-<body>
+<body id="bod">
 	<button id="btn-settings" class="settings-opened"> Settings <i class="fa fa-cog"></i></button>
 	<button id="btn-weather" class="btn-weather">  <i class="fa fa-cloud"></i></button>
 	<span class="btn-weather" id="timing" class="date"> time</span>
@@ -33,6 +37,7 @@
 		</form>
 			</li>
 			
+			
 		</ol>
 		
 	</div>
@@ -50,25 +55,20 @@
 
 			<div class="completedtask">
 				<h2> Drag completed task to this place here</h2>
-				<ul class="dropfalse" id="sortable2">
+				<ol class="droppable">
 					
-				</ul>
+				</ol>
 			</div>
 
 		</div>
 		
 		<div class="todoApp">	
 			
-			<input type="text" name="" class="input"> <span class="add">Add task</span>
-
-		
-
+			<input type="text" name="" class="input" id="input1"> <span class="add" id="add">Add task</span>
 
 		</div>
 
 <!-- End of todo App -->
-
-
 
 	<script type="text/javascript" src="main.js"></script>
 </body>
