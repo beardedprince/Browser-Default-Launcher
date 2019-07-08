@@ -1,6 +1,7 @@
 
 function openSettings() {
    document.getElementById("settings").classList.toggle("settings-opened");
+   
 }
 
 
@@ -23,6 +24,9 @@ function changeName() {
    getGreeting();
 
 }
+
+
+
 
 document.getElementById("name-form").addEventListener('submit', function(e) {
    e.preventDefault()
@@ -63,15 +67,21 @@ var timing = document.getElementById("timing").innerHTML= time;
 //todo app settings
 
 $("document").ready(function(){
-
+localStorage.getItem("tasks");
 		$('.add').click(function(){
 			var acceptInput = $('.input').val();
+			localStorage.setItem("tasks", acceptInput);
 			
 			if (acceptInput == ''){
 				alert('you need to input something');
 			} else {
 			$('ul').append('<li> <i class="fa fa-edit"></i> ' + acceptInput + '</li>' )
+			localStorage.getItem("tasks");
 $('.input').val('');
+
+		
+
+
 			}});
 
 
@@ -89,13 +99,30 @@ $( function() {
       connectWith: "ul"
     });
  
-    $( "ul.dropfalse" ).sortable({
-      
-      dropOnEmpty: true
-    });
+//     $('.droppable').droppable({ 
+
+//   // default options
+//   accept: '*',
+//   activeClass: '',
+//   disabled: false,
+//   hoverClass: '',
+//   initialized: false,
+//   scope: 'default',
+//   receiveHandler: null
+  
+// });
  
-    $( "#sortable1, #sortable2" ).disableSelection();
+    $( "#sortable1" ).disableSelection();
   } );
 
-		
+
 	
+function saveTask(){
+	var a = document.getElementById("input1").value;
+	localStorage.setItem("tasks", a);
+	
+}
+
+function getTask(){
+	localStorage.getItem("tasks");
+}
