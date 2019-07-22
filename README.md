@@ -2,11 +2,11 @@
 
 A chrome Extension that greets users whenever they open a new tab. Updates will be added to the project subsequently.
 
-## Project Update
-[x] Todo App
-[ ] Dragging task to completed
-[ ] Weather update
-[ ] Daily Quotes
+### Project Update
+- [x] Todo App
+- [ ] Dragging task to completed
+- [ ] Weather update
+- [ ] Daily Quotes
 
 
 ## Usage
