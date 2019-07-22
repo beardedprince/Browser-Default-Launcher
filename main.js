@@ -59,36 +59,37 @@ var timing = document.getElementById("timing").innerHTML= time;
     else if (hrs >= 17 && hrs <= 24)
         greet = 'Good evening';
 
-    document.getElementById('time-of-day').innerHTML =
-        '<b>' + greet + '</b>';
+    document.getElementById('time-of-day').innerHTML = '<b>' + greet + '</b>'; 
 
 
 //todo app settings using jQuery
 
-var nextTask = [];
-
-		$("document").ready(function(){
+		$(document).ready(function(){
 
 				$('.add').click(function(){
 					var acceptInput = $('.input').val();
-					
-						nextTask.push(acceptInput);
-						localStorage.setItem("tasks", JSON.stringify(nextTask));
-					
+					/* Load current tasks or init to empty array if none in localStorage */
+					const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+
+					tasks.unshift(acceptInput);
+
+					/* Persist updated tasks list to localStoarge */
+					localStorage.setItem("tasks", JSON.stringify(tasks));
+
 					
 					if (acceptInput == '') {
 						alert('you need to input something');
 					} 
 					else {
-						$('ul').append('<li> <i class="fa fa-edit"></i> ' + acceptInput + '<i class="fa fa-trash" aria-hidden="true"></i>' + '' + '</li>');
+						$('ul').append('<li> ' + acceptInput + '</li>');
 						$('.input').val('');
 
 					}
 				});
-					$(document).on('dblclick','li', function(){
-		      		$(this).toggleClass('strike').fadeOut('1000'); 
+					// $(document).on('dblclick','li', function(){
+		   //    		$(this).toggleClass('strike').fadeOut('1000'); 
 
-		      });
+		   //    });
 
 
 		});
@@ -99,33 +100,15 @@ var nextTask = [];
 
 $(function(){
 
-	for (var i = 0; i < localStorage.length; i++) {
-		var a = localStorage.key(i);
-		var b = localStorage.getItem(a);
-		var c = '';
-		c += '<li>'  + JSON.parse(b) +  '</li>';
-	
-		$('ul').append(c); // Change output from localStorage to list tag
+	/* Load current tasks or init to empty array if none in localStorage */
+	const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
-		
-
-		
-	}
-
+	tasks.forEach(function (task) {
+		/* For each task in loaded task list, append an item to the ul element */
+		$('ul').append('<li>' +  task + ' <i class="fa fa-edit"></i> ' +'<i class="fa fa-trash" aria-hidden="true"></i>' + '' + '</li>');
+	})
 	
 });
-
-var array = ['slide 1', 'slide 2', 'slide 9', 'i don tire', 2019];
-
-
-
-    array.forEach(function(item){
-	
-    	$('ol').append('<li>' + item + '</li>');
-    	
-    })
-
-
 
 
 
@@ -151,6 +134,19 @@ var array = ['slide 1', 'slide 2', 'slide 9', 'i don tire', 2019];
 	    $( "#sortable1" ).disableSelection();
 	  } );
 
+// Allow editing Task
+$(document).on('click','i.fa-edit', function() {
+	alert('trash works');
+	$('.editTask').show();
+})
+
+
+
+// Allow Deleting Task
+$(document).on('click','i.fa-trash', function() {
+	alert('Delete works');
+	$('.editTask').hide();
+})
 
 
 
