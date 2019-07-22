@@ -6,7 +6,7 @@
 
 	body {
 	   background-color: #c670ca;
-	   background-image: url("image/browsify.jpg"); 
+	   background-image: url("image/background.jpg"); 
 	}
 	
 	html {
@@ -91,6 +91,14 @@
 		float: right;
 	}
 
+	.btn-weather, #timing{
+		float: right;
+		font-size: 2em;
+		color: #fff;
+		font-weight: bolder;
+
+	}
+
 	form{
 		padding-top: 20px;
 	}
@@ -107,7 +115,9 @@
 	#timing{
 		font-weight: 900;
 		padding-top: 12px;
-		color: #f4f4f4;
+		color: #fff;
+		font-size: 3em;
+		padding: 90px;
 	}
 
 	.greeting-container {
@@ -179,7 +189,7 @@ background-color: hsla(0, 100%, 90%, 0.3);
 .tasklist{
 	float: left;
 	margin-left: 15px;
-	width: 50%;
+	width: 45%;
 	margin-top: 12px;
 }
 
@@ -239,8 +249,11 @@ background-color: hsla(0, 100%, 90%, 0.3);
 
 
 
-i.fa-trash {
+i.fa-trash ,i.fa-edit{
     float: right;
+    margin-right: 15px; 
+    /*padding: 7px 0px;*/
+
 }
 
 
@@ -259,7 +272,6 @@ i.fa-trash {
 	    box-sizing: border-box;
 	}
 
-
 .add{
 		background-color: #ddd;
 	    padding: 12px 23px;
@@ -268,9 +280,9 @@ i.fa-trash {
 
 
 .completedtask{
-	 width: 40%;
+	 width: 45%;
     float: left;
-    margin-left: 15px;
+    margin-left: 5%;
     margin-top: 12px;
 }
 
@@ -280,3 +292,11 @@ i.fa-trash {
 }
 
 /* End of task wrapper settings*/
+
+/*Edit Tasks*/
+
+.editTask{
+	display: none;
+}
+
+/*End of Edit Tasks*/
