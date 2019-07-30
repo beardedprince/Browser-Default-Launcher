@@ -61,6 +61,7 @@ var timing = document.getElementById("timing").innerHTML= time;
 
     document.getElementById('time-of-day').innerHTML = '<b>' + greet + '</b>'; 
 
+	
 
 //todo app settings using jQuery
 
@@ -86,67 +87,86 @@ var timing = document.getElementById("timing").innerHTML= time;
 
 					}
 				});
-					// $(document).on('dblclick','li', function(){
-		   //    		$(this).toggleClass('strike').fadeOut('1000'); 
+					 // $(document).on('dblclick','li', function(){
+		    //   		$(this).toggleClass('strike').fadeOut('1000'); 
 
-		   //    });
-
+		    //   });
 
 		});
 
-		
 
 // Retieve data from localStorage and parse the data to normal string
 
-$(function(){
+	$(document).ready( function(){
 
-	/* Load current tasks or init to empty array if none in localStorage */
-	const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+		/* Load current tasks or init to empty array if none in localStorage */
+		const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
-	tasks.forEach(function (task) {
-		/* For each task in loaded task list, append an item to the ul element */
-		$('ul').append('<li>' +  task + ' <i class="fa fa-edit"></i> ' +'<i class="fa fa-trash" aria-hidden="true"></i>' + '' + '</li>');
-	})
+		tasks.forEach(function (task) {
+			/* For each task in loaded task list, append an item to the ul element */
+			$('ul').append('<li>' +  task + ' <i class="fa fa-edit"></i> ' +'<i class="fa fa-trash" aria-hidden="true"></i>' + '' + '</li>');
+		})
 	
-});
-
+	});
 
 
 // Allow tasks to be sorted
-	$( function() {
-	    $( "ul.droptrue" ).sortable({
-	      connectWith: "ul"
-	    });
-	 
-	    $('.droppable').droppable({ 
+	// $( function() {
 
-	  // default options
-	  accept: '*',
-	  activeClass: '',
-	  disabled: false,
-	  hoverClass: '',
-	  initialized: false,
-	  scope: 'default',
-	  receiveHandler: null
-	  
-	});
+	    // $( "ul.droptrue" ).sortable ({
+	    //   connectWith: "ul"
+	    // });
 	 
-	    $( "#sortable1" ).disableSelection();
-	  } );
+	 //   
+	 
+	//     $( "#sortable1" ).disableSelection();
+	// });
+
+
+
+	
 
 // Allow editing Task
-$(document).on('click','i.fa-edit', function() {
-	alert('trash works');
-	$('.editTask').show();
-})
-
+	$(document).on('click','i.fa-edit', function() {
+		alert('trash works');
+		var tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+		$('.editTask').show();
+		$('.editInput').text(tasks);
+	});
 
 
 // Allow Deleting Task
-$(document).on('click','i.fa-trash', function() {
-	alert('Delete works');
-	$('.editTask').hide();
+	$(document).on('click','i.fa-trash', function(event) {
+
+		var id = event.data;
+		console.log('you deleted and item' + id);
+		var tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+		// let items = Object.keys(tasks);
+		for (var i = 0; i < tasks.length; i++) {
+			if (tasks[i].indexOf == id ) {
+				tasks.splice(i, 1);
+				break;
+			}
+		}
+		localStorage.setItem("tasks", JSON.stringify(tasks));
+		
+	});
+
+
+// Get location of user
+$(document).ready( function(){
+	
+	$.get("https://api.ipdata.co?api-key=test", function(data){
+		$('#location').html(data.city + '' + data.emoji_flag);
+
+		//console.log(data);
+	});
+
+	var variable='London'
+$.get("https://openweathermap.org/find?q=Ilesa%2C+Osun", function(data){
+console.log(data)
 })
 
 
-
+});
+	
