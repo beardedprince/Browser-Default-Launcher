@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	  	
 	 
 </head>
@@ -16,8 +16,9 @@
 
 <body id="bod">
 	<button id="btn-settings" class="settings-opened"> Settings <i class="fa fa-cog"></i></button>
-	<button id="btn-weather" class="btn-weather">  <i class="fa fa-cloud"> </i></button>
+	<button id="btn-weather" class="btn-weather" >  <i class="fa fa-cloud"> </i></button>
 	<span class="btn-weather" id="timing" class="date"> time</span>
+	<span class="btn-weather" id="location" class="date"> location</span>
 
 	<div class="greeting-container">
 		<h2  class="greeting" id="time-of-day"></h2>
@@ -52,7 +53,7 @@
 
 			<div class="completedtask">
 				<h2> Drag completed task to this place here</h2>
-				<ol class="droppable">
+				<ol class="sortable2">
 					
 				</ol>
 			</div>
@@ -68,7 +69,7 @@
 
 		<div class="editTask">
 			<div>
-				<input type="text" value=""> 
+				<input type="text" value="" class="EditInput"> 
 				<button>Save Task</button>
 			</div>
 			
