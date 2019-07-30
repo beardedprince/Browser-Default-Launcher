@@ -159,14 +159,15 @@ $(document).ready( function(){
 	$.get("https://api.ipdata.co?api-key=test", function(data){
 		$('#location').html(data.city + '' + data.emoji_flag);
 
-		//console.log(data);
+		console.log(data);
 	});
 
-	var variable='London'
-$.get("https://openweathermap.org/find?q=Ilesa%2C+Osun", function(data){
-console.log(data)
-})
-
-
+	$.get('https://fcc-weather-api.glitch.me/api/current?lat=6.4474&lon=3.3903', function(weather){
+		$('.sortable2').html(weather.main.temp);
+		
+		console.log(weather);
+		
+		alert( + "wrong");
+	});
 });
 	
