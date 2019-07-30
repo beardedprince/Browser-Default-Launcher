@@ -87,10 +87,10 @@ var timing = document.getElementById("timing").innerHTML= time;
 
 					}
 				});
-					 // $(document).on('dblclick','li', function(){
-		    //   		$(this).toggleClass('strike').fadeOut('1000'); 
+					 $(document).on('dblclick','li', function(){
+		      		$(this).toggleClass('strike').fadeOut('1000'); 
 
-		    //   });
+		      });
 
 		});
 
